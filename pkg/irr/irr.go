@@ -113,12 +113,12 @@ func Update(peerData *config.Peer, irrServer string, queryTimeout uint, bgpqArgs
 		if bgpqArgs4 != "" {
 			bgpqArgs4 += " "
 		}
-		bgpqArgs4 += "-R 24"
+		bgpqArgs4 += "-R 32"
 
 		if bgpqArgs6 != "" {
 			bgpqArgs6 += " "
 		}
-		bgpqArgs6 += "-R 48"
+		bgpqArgs6 += "-R 128"
 	}
 
 	prefixesFromIRR4, err := PrefixSet(*peerData.ASSet, 4, irrServer, queryTimeout, bgpqArgs4)
