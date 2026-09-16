@@ -362,6 +362,13 @@ func Load(configBlob []byte) (*config.Config, error) {
 			return nil, fmt.Errorf("[%s] require-roles set but no role specified", peerName)
 		}
 
+		// Validate BGP channel gateway mode
+		if peerData.Gateway != nil {
+			if *peerData.Gateway != "direct" && *peerData.Gateway != "recursive" {
+				return nil, fmt.Errorf("[%s] Invalid gateway mode: %s (must be one of direct, recursive)", peerName, *peerData.Gateway)
+			}
+		}
+
 	} // end peer list
 
 	// Parse origin routes by assembling OriginIPv{4,6} lists by address family

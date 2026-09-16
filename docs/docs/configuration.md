@@ -863,6 +863,14 @@ Should BGP next-hop-self for iBGP be enabled?
 |------|---------|------------|
 | bool   | false      |          |
 
+### `gateway`
+
+BGP channel gateway mode (direct or recursive)
+
+| Type | Default | Validation |
+|------|---------|------------|
+| string   |       |          |
+
 ### `bfd`
 
 Should BFD be enabled?
@@ -1093,7 +1101,7 @@ Maximum number of IPv4 prefixes to import after filtering
 
 | Type | Default | Validation |
 |------|---------|------------|
-| int   | 1000000      |          |
+| int   | 1250000      |          |
 
 ### `import-limit6`
 
@@ -1101,7 +1109,7 @@ Maximum number of IPv6 prefixes to import after filtering
 
 | Type | Default | Validation |
 |------|---------|------------|
-| int   | 300000      |          |
+| int   | 500000      |          |
 
 ### `import-limit-violation`
 
